@@ -1,0 +1,145 @@
+<!--
+Single-file HTML: "Minecraft Client" - inspired layout (not a copy of any specific site).
+Save as minecraft_client_clone.html and open in a browser.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minecraft Client — Lightweight mod support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f1724; /* dark navy */
+      --bg2:#071022; /* deeper */
+      --accent-1:#7C3AED; /* purple */
+      --accent-2:#06B6D4; /* teal */
+      --glass: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.6);
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(160deg,var(--bg1) 0%, var(--bg2) 100%);color:#fff}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:1px}
+    .logo .mark{font-size:34px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.06)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:36px}
+    .hero h1{font-size:64px;line-height:0.9;margin:0}
+    .hero p{color:var(--muted);font-size:18px;margin:14px 0 22px}
+    .buttons{display:flex;gap:14px}
+    .btn{padding:14px 20px;border-radius:12px;font-weight:700;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+
+    .preview{background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04)}
+    .preview img{width:100%;border-radius:10px;display:block}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:42px 0}
+    .card{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{border-top:1px solid rgba(255,255,255,0.03);padding:20px 0;margin-top:40px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .logo .mark{font-size:28px}
+    }
+    @media (max-width:600px){
+      .features{grid-template-columns:1fr}
+      .hero h1{font-size:44px}
+      nav a{display:none}
+      .container{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">minecraft</div>
+        <div style="font-size:12px;color:var(--muted);font-weight:600">Client</div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#docs">Docs</a>
+        <a class="cta" href="#getstarted">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>minecraft — lightweight, power-packed client</h1>
+          <p>Fast, modular, and easy to customize. Built for players who want more control without sacrificing performance. Works with many versions and includes quick toggles, configs, and an intuitive HUD editor.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" id="downloadBtn">Download</button>
+            <button class="btn btn-ghost" id="openDocs">Read docs</button>
+          </div>
+          <div style="margin-top:22px;color:var(--muted);font-size:14px">Supported: Java Edition 1.8 - 1.20+</div>
+        </div>
+        <div class="preview">
+          <!-- placeholder image: you can replace with a screenshot -->
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%23081722'/><text x='50%' y='50%' fill='%237C3AED' font-family='Poppins, Arial' font-size='28' text-anchor='middle'>Client preview placeholder</text></svg>" alt="preview">
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="card">
+          <h3>Modular tools</h3>
+          <p>Enable only the features you need. Lightweight modules keep CPU and memory usage low.</p>
+        </div>
+        <div class="card">
+          <h3>Custom HUD</h3>
+          <p>Drag-and-drop HUD editor with instant previews. Save multiple layouts for different game modes.</p>
+        </div>
+        <div class="card">
+          <h3>Performance first</h3>
+          <p>Optimized rendering and async tasks to keep your FPS high even with many features enabled.</p>
+        </div>
+      </section>
+
+      <section id="download" style="margin-top:8px">
+        <div class="card" style="padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <div>
+            <h3 style="margin-bottom:6px">Download minecraft Client</h3>
+            <p style="margin:0;color:var(--muted)">Latest stable build • Signed releases • Simple installer</p>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-primary">Windows</button>
+            <button class="btn btn-ghost">Mac / Linux</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <strong>minecraft</strong> Client • Not affiliated with Mojang / Microsoft</div>
+      <div style="font-size:13px">Made with ♥ • Built for speed</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small behaviors for demo
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      alert('This is a demo HTML. Replace buttons with real download links.');
+    });
+    document.getElementById('openDocs').addEventListener('click', ()=>{
+      alert('Open your documentation page or link here.');
+    });
+  </script>
+</body>
+</html>
